@@ -17,8 +17,8 @@ fi
 
 kubectl apply \
     --namespace $namespace \
-    --filename certificate-staging.yaml \
-    --filename certificate-production.yaml
+    --filename ./manifests/certificate-staging.yaml \
+    --filename ./manifests/certificate-production.yaml
 
 helm upgrade --install traefik traefik/traefik \
     --namespace $namespace \
@@ -26,5 +26,5 @@ helm upgrade --install traefik traefik/traefik \
 
 kubectl apply \
     --namespace $namespace \
-    --filename dashboard.yaml
+    --filename ./manifests/dashboard.yaml
 

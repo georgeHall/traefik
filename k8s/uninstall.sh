@@ -4,9 +4,9 @@ namespace="traefik"
 helm uninstall traefik --namespace $namespace
 
 kubectl delete \
-    --filename dashboard.yaml \
-    --filename certificate-staging.yaml \
-    --filename certificate-production.yaml \
+    --filename ./manifests/dashboard.yaml \
+    --filename ./manifests/certificate-staging.yaml \
+    --filename ./manifests/certificate-production.yaml \
     --namespace $namespace
 
 kubectl delete namespace $namespace
