@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: traefik-gerh-co-uk
+  namespace: traefik # Needs to be namespace of service
+spec:
+  secretName: traefik-gerh-co-uk-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "traefik.gerh.co.uk"
+  dnsNames:
+    - "traefik.gerh.co.uk"
